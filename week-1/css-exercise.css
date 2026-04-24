@@ -1,0 +1,119 @@
+:root {
+  font-family: "Poppins", sans-serif;
+
+  --primary: hsl(238, 100%, 58%);
+  --secondary: hsl(0, 0%, 50%);
+  --light: hsl(0, 0%, 96%);
+  --dark: hsl(0, 0%, 17%);
+
+  --spacing-base: 1rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 2rem;
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.spinner {
+  --spinner-size: 2rem;
+  width: var(--spinner-size);
+  aspect-ratio: 1;
+  border: calc(var(--spinner-size) / 5) solid var(--secondary);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+.btn {
+  display: grid;
+  grid-template-areas: "button";
+  padding: var(--spacing-base) var(--spacing-md);
+  border-radius: var(--spacing-lg);
+  background-color: var(--primary);
+  color: var(--light);
+  border: 2px solid var(--primary);
+  transition:
+    color 0.2s linear,
+    background-color 0.2s linear,
+    scale 0.25s ease-in-out;
+
+  &:hover {
+    background-color: var(--light);
+    color: var(--primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--dark);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.btn__loader {
+  visibility: hidden;
+}
+
+.btn__loader,
+.btn__text {
+  --spinner-size: 0.5rem;
+  align-self: center;
+  justify-self: center;
+  grid-area: button;
+}
+
+.btn--loading {
+  .btn__loader {
+    visibility: visible;
+    animation: reveal 1s 1 forwards;
+  }
+  .btn__text {
+    animation: hide 1s 1 forwards;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes hide {
+  from {
+    visibility: visible;
+    opacity: 100%;
+  }
+  90% {
+    opacity: 0%;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0%;
+  }
+}
+
+@keyframes reveal {
+  from {
+    visibility: hidden;
+    opacity: 0%;
+  }
+  10% {
+    opacity: 0%;
+  }
+  to {
+    visibility: visible;
+    opacity: 100%;
+  }
+}

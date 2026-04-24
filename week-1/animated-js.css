@@ -1,0 +1,67 @@
+:root {
+  font-family: sans-serif;
+
+  --primary: hsl(33, 100%, 73%);
+  --secondary: hsl(0, 0%, 50%);
+  --light: hsl(0, 0%, 100%);
+  --dark: hsl(0, 0%, 0%);
+
+  --spacing-base: 1rem;
+  --spacing-md: 1.25rem;
+}
+
+.box {
+  --size: 10rem;
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: var(--spacing-base) var(--spacing-md);
+  background-color: var(--secondary);
+  color: var(--light);
+  text-decoration: none;
+  border-radius: var(--spacing-md);
+  overflow: clip;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    position: absolute;
+    inset: 0;
+
+    clip-path: circle(0% at 0 100%);
+  }
+
+  &:hover {
+    &::after {
+      clip-path: circle(200% at 0 100%);
+    }
+  }
+}
+
+.bar {
+  --height: 8px;
+  height: var(--height);
+  border-radius: var(--height);
+  width: 100%;
+  background-color: var(--secondary);
+  position: relative;
+  overflow: clip;
+
+  &::before {
+    position: absolute;
+    left: -10%;
+    content: "";
+    display: block;
+    width: 10%;
+    height: 100%;
+    background-color: var(--primary);
+  }
+}
