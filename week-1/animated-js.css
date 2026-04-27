@@ -65,3 +65,7 @@
     background-color: var(--primary);
   }
 }
+
+[data-animation="fade-in"] {
+  opacity: 0;
+}

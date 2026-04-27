@@ -11,9 +11,33 @@ $pizzaBoxes.forEach($pizzaBox => {
 // Selecteer alle elementen met data-animation -> loop hierover.
 const $rotationElements = document.querySelectorAll("[data-animation='customRotation']");
 
+const handleControls = (animation) => {
+    const $controls = document.querySelectorAll("[data-controls]");
+
+    $controls.forEach($control => {
+        $control.addEventListener('click', () => {
+            const action = $control.getAttribute('data-controls');
+
+            switch (action) {
+                case 'play':
+                    animation.play();
+                    break;
+                case 'pause':
+                    animation.pause();
+                    break;
+                case 'reset':
+                    animation.currentTime = 0;
+                    break;
+                default:
+                    break;
+            }
+        });
+    })
+}
+
 $rotationElements.forEach($rotationElement => {
-    console.log($rotationElement);
     const { rotation = 360 } = $rotationElement.dataset;
+
     const rotationAnimation = $rotationElement.animate(
         [
             { rotate: '0deg' },
@@ -27,10 +51,36 @@ $rotationElements.forEach($rotationElement => {
         }
     );
 
-    rotationAnimation.currentTime = 500;
-    rotationAnimation.pause();
+    handleControls(rotationAnimation);
 });
 
 // Zorg eerst dat de drie knoppen werken en de animatie (voor alle elementen kan controleren.)
 
-// Uitbreiding: Zorg dat in de knop een attribuut is zodat je controle hebt welk element je pauzeert.
+const fadeInElements = document.querySelectorAll("[data-animation='fade-in']");
+
+const fadeInAnimation = ($el) => {
+    $el.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+    ], {
+        duration: 400,
+        iterations: 1,
+        fill: 'forwards'
+    });
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            fadeInAnimation(entry.target);
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: .5,
+    rootMargin: "0px 0px"
+})
+// Je kan geen array of nodelist meegeven aan de observe methode!
+fadeInElements.forEach(fadeInElement => {
+    observer.observe(fadeInElement);
+});

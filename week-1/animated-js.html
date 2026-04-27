@@ -13,15 +13,17 @@
             <section>
                 <h2>Box Animation</h2>
 
-                <div class="box" data-pizza="pepperoni" data-crust="cheesy" data-animation="customRotation"></div>
+                <div class="box" data-pizza="pepperoni" data-crust="cheesy" data-animation="customRotation"
+                    data-name="main-animation"></div>
             </section>
 
             <section>
                 <h2 data-pizza="margarita" data-animation="customRotation" data-rotation="180">Button Animation</h2>
 
-                <button>Play</button>
-                <button>Pause</button>
-                <button>Reset time to 0</button>
+                <button data-controls="play">Play</button>
+                <button data-controls="play" data-target="main-animation">Play element with name main animation</button>
+                <button data-controls="pause">Pause</button>
+                <button data-controls="reset">Reset time to 0</button>
 
                 <a href="/" class="btn">Go home</a>
             </section>
@@ -29,11 +31,11 @@
             <section>
                 <h2>Box Keyframes</h2>
 
-                <div class="box keyframed"></div>
+                <div data-animation="fade-in" class="box keyframed"></div>
             </section>
 
             <section>
-                <h2>Loading</h2>
+                <h2 data-animation="fade-in">Loading</h2>
 
                 <div class="bar"></div>
             </section>
