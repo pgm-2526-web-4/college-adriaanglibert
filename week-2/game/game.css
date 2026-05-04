@@ -1,8 +1,34 @@
 :root {
-  --dark: hsl(0, 0%, 25%);
-  --light: hsl(0, 2%, 80%);
+  --dark: hsl(0, 0%, 10%);
+  --light: hsl(0, 2%, 90%);
+  --danger: hsl(4, 100%, 69%);
+
+  --spacing-base: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  font-family: "Helvetica", sans-serif;
+  color: var(--light);
 }
 
 .body {
   background-color: var(--dark);
+  margin: 0;
+  min-width: 100svw;
+  min-height: 100svh;
+}
+
+.ball {
+  background-color: var(--light);
+  border: none;
+  width: var(--spacing-lg);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--spacing-lg);
+}
+
+.score {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  padding: var(--spacing-md);
 }
