@@ -5,10 +5,22 @@
 }
 
 .box {
-  --size: 2rem;
+  --size: 10rem;
 
   width: var(--size);
   aspect-ratio: 1 / 1;
   background-color: var(--primary);
   margin-bottom: 1rem;
+}
+
+.box--green {
+  background-color: green;
+}
+
+.box--orange {
+  background-color: orange;
+}
+
+.box-gray {
+  background-color: gray;
 }
