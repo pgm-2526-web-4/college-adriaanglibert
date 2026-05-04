@@ -1,0 +1,20 @@
+:root {
+  font-family: sans-serif;
+
+  --light: hsl(0, 0%, 100%);
+  --dark: hsl(0, 0%, 10%);
+  --primary: hsl(0, 100%, 80%);
+}
+
+body {
+  margin: 0;
+}
+
+.box {
+  --size: 2rem;
+
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary);
+  margin-bottom: 1rem;
+}
