@@ -1,0 +1,42 @@
+:root {
+  font-family: sans-serif;
+
+  --primary: hsl(0, 100%, 80%);
+}
+
+.box {
+  --size: 2rem;
+
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section {
+  min-height: 100vh;
+  min-height: 100svh;
+  outline: 1px solid black;
+  outline-offset: -2px;
+}
+
+.horizontal-container {
+  overflow: hidden;
+}
+
+.horizontal {
+  display: flex;
+}
+
+.horizontal__section {
+  min-width: 80svw;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+
+  &:nth-child(even) {
+    background-color: red;
+  }
+}
