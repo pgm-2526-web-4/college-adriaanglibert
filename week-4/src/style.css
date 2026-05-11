@@ -1,0 +1,19 @@
+@import url("./styles/_variables.css");
+@import url("./styles/_mouse.css");
+@import url("./styles/_horizontal.css");
+
+.box {
+  --size: 2rem;
+
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section {
+  min-height: 100vh;
+  min-height: 100svh;
+  outline: 1px solid black;
+  outline-offset: -2px;
+}

@@ -1,0 +1,11 @@
+.ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  translate: -50% -50%;
+  mix-blend-mode: multiply;
+}

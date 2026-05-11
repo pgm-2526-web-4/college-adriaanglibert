@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP - Scroll based animations</title>
+  </head>
+  <body>
+    <div class="ball" data-animation="mouse" aria-hidden="true"></div>
+
+    <header>
+      <h1>GSAP Scroll based animations</h1>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+      <section class="section">
+        <div class="box" data-animation="fade-in-on-scroll"></div>
+        <div class="box" data-animation="fade-in-on-scroll"></div>
+        <h2 id="trigger">TEST TEKST DIE ALS TRIGGER ZAL WERKEN</h2>
+        <div class="box"></div>
+      </section>
+
+      <div class="horizontal-container" data-animation="horizontal-scroll-container">
+        <div class="horizontal">
+          <section class="horizontal__section">
+            <h2 data-animation="rotate">Sectie 1</h2>
+          </section>
+          <section class="horizontal__section">
+            <h2 data-animation="rotate">Sectie 2</h2>
+          </section>
+          <section class="horizontal__section">
+            <h2 data-animation="rotate">Sectie 3</h2>
+          </section>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
