@@ -1,3 +1,6 @@
 @import url("./styles/_reset.css");
 @import url("./styles/_variables.css");
 @import url("./styles/_hero.css");
+@import url("./styles/_columns.css");
+@import url("./styles/_mask.css");
+@import url("./styles/_clip.css");

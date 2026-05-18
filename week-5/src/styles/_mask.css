@@ -1,0 +1,13 @@
+.mask {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  overflow: hidden;
+
+  .mask__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
