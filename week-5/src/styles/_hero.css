@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  min-height: 150svh;
+
+  .hero__image {
+    position: absolute;
+
+    &.hero__image--top {
+      top: 0;
+    }
+
+    &.hero__image--bottom {
+      bottom: 0;
+    }
+  }
+}
