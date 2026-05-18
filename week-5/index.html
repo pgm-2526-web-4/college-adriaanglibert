@@ -7,11 +7,10 @@
 		<title>GSAP - Parallax</title>
 	</head>
 	<body>
-		<header class="hero">
-			<img class="hero__image hero__image--top" src="/asset_0.png" alt="">
+		<header class="hero" data-animation="parallax">
+			<img class="hero__image hero__image--top" data-child="parallax" data-move="-200" src="/asset_0.png" alt="">
 			<img class="hero__image hero__image--top" src="/asset_1.png" alt="">
-			<img class="hero__image hero__image--bottom" src="/asset_2.png" alt="">
-
+			<img class="hero__image hero__image--bottom" data-child="parallax" data-move="20" src="/asset_2.png" alt="">
 		</header>
 
 		<main>
