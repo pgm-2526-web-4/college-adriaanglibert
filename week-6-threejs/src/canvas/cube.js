@@ -5,7 +5,7 @@ function initThree() {
 
   const renderer = new WebGLRenderer();
   const scene = new Scene();
-  const camera = new PerspectiveCamera();
+  const camera = new PerspectiveCamera(50, $canvasContainer.clientWidth / $canvasContainer.clientHeight);
 
   const box = new BoxGeometry(10, 10, 10);
   const material = new MeshLambertMaterial({ color: 0x00ff00 });
@@ -27,6 +27,12 @@ function initThree() {
   }
 
   renderer.setAnimationLoop(animate);
+
+  window.addEventListener("resize", () => {
+    camera.aspect = $canvasContainer.clientWidth / $canvasContainer.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize($canvasContainer.clientWidth, $canvasContainer.clientHeight);
+  });
 }
 
 export default initThree;
